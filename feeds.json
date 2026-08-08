@@ -7,6 +7,12 @@
       "category": "tech"
     },
     {
+      "id": "slashdot",
+      "name": "Slashdot",
+      "url": "https://rss.slashdot.org/Slashdot/slashdotMain",
+      "category": "tech"
+    },
+    {
       "id": "bbc_tech",
       "name": "BBC Technology",
       "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
