@@ -18,6 +18,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY *.py ./
 COPY feeds.json ./feeds.json
 
+# Pasta do banco pertencente ao appuser (o volume nomeado herda essa dona).
+RUN mkdir -p /data && chown appuser:appuser /data
+
 USER appuser
 EXPOSE 17631
 

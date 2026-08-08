@@ -24,10 +24,9 @@ Rodar com Docker:
 
     cp .env.example .env
     (edite o .env e defina NEWS_MCP_TOKEN)
-    mkdir -p data
     docker compose up -d --build
 
-A porta fica presa em 127.0.0.1:17631, atras de um proxy reverso (nginx) com HTTPS. O nginx deve repassar todas as rotas (proxy_pass para 127.0.0.1:17631), nao so /mcp, porque o OAuth usa /authorize, /token, /register e /.well-known. O banco fica em ./data/news.db e persiste. Editar o feeds.json vale na proxima coleta, sem rebuild.
+A porta fica presa em 127.0.0.1:17631, atras de um proxy reverso (nginx) com HTTPS. O nginx deve repassar todas as rotas (proxy_pass para 127.0.0.1:17631), nao so /mcp, porque o OAuth usa /authorize, /token, /register e /.well-known. O banco fica num volume Docker (newsdata) e persiste; o container roda como usuario nao-root e o volume ja nasce com a dona certa. Editar o feeds.json vale na proxima coleta, sem rebuild.
 
 Configuracao pelo .env: NEWS_MCP_TOKEN, NEWS_MCP_PORT, POLL_INTERVAL_MIN, RETENTION_DAYS, NEWS_MCP_ISSUER_URL, NEWS_MCP_AUTH_PASSWORD.
 

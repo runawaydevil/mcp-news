@@ -14,7 +14,7 @@ services:
       # 127.0.0.1 → só o nginx (mesma máquina) alcança. NUNCA use 0.0.0.0 aqui.
       - "127.0.0.1:17631:17631"
     volumes:
-      - ./data:/data                    # banco persistente (news.db + WAL)
+      - newsdata:/data                  # banco persistente (news.db + WAL)
       - ./feeds.json:/app/feeds.json:ro # edite as fontes sem rebuild
     restart: unless-stopped
     # ── Endurecimento ──
@@ -25,3 +25,6 @@ services:
       - ALL
     security_opt:
       - no-new-privileges:true
+
+volumes:
+  newsdata:
