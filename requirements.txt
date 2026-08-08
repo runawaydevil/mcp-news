@@ -1,0 +1,5 @@
+mcp>=1.12,<2
+httpx
+feedparser
+pydantic
+uvicorn[standard]

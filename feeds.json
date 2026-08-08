@@ -1,0 +1,400 @@
+{
+  "feeds": [
+    {
+      "id": "tecnoblog",
+      "name": "Tecnoblog",
+      "url": "https://tecnoblog.net/feed/",
+      "category": "tech"
+    },
+    {
+      "id": "bbc_tech",
+      "name": "BBC Technology",
+      "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+      "category": "tech"
+    },
+    {
+      "id": "lemmy_technology",
+      "name": "Lemmy Technology (lemmy.world)",
+      "url": "https://lemmy.world/feeds/c/technology.xml?sort=Active",
+      "category": "tech"
+    },
+    {
+      "id": "beehaw_tech",
+      "name": "Beehaw Technology (beehaw.org)",
+      "url": "https://beehaw.org/feeds/c/technology.xml?sort=Active",
+      "category": "tech"
+    },
+    {
+      "id": "lemmy_selfhosted",
+      "name": "Lemmy Selfhosted (lemmy.world)",
+      "url": "https://lemmy.world/feeds/c/selfhosted.xml?sort=Active",
+      "category": "tech"
+    },
+    {
+      "id": "lemmy_opensource",
+      "name": "Lemmy Open Source (lemmy.ml)",
+      "url": "https://lemmy.ml/feeds/c/opensource.xml?sort=Active",
+      "category": "tech"
+    },
+    {
+      "id": "hackernews",
+      "name": "Hacker News",
+      "url": "https://hnrss.org/frontpage",
+      "category": "programming"
+    },
+    {
+      "id": "lobsters",
+      "name": "Lobsters",
+      "url": "https://lobste.rs/rss",
+      "category": "programming"
+    },
+    {
+      "id": "lemmy_programming",
+      "name": "Lemmy Programming (programming.dev)",
+      "url": "https://programming.dev/feeds/c/programming.xml?sort=Active",
+      "category": "programming"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "url": "https://stackoverflow.blog/feed/",
+      "category": "programming"
+    },
+    {
+      "id": "infoq",
+      "name": "InfoQ",
+      "url": "https://feed.infoq.com/",
+      "category": "programming"
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "url": "https://martinfowler.com/feed.atom",
+      "category": "programming"
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains Blog",
+      "url": "https://blog.jetbrains.com/feed/",
+      "category": "programming"
+    },
+    {
+      "id": "freecodecamp",
+      "name": "freeCodeCamp News",
+      "url": "https://www.freecodecamp.org/news/rss/",
+      "category": "programming"
+    },
+    {
+      "id": "css_tricks",
+      "name": "CSS-Tricks",
+      "url": "https://css-tricks.com/feed/",
+      "category": "programming"
+    },
+    {
+      "id": "smashing",
+      "name": "Smashing Magazine",
+      "url": "https://www.smashingmagazine.com/feed/",
+      "category": "programming"
+    },
+    {
+      "id": "krebs",
+      "name": "KrebsOnSecurity",
+      "url": "https://krebsonsecurity.com/feed/",
+      "category": "security"
+    },
+    {
+      "id": "schneier",
+      "name": "Schneier on Security",
+      "url": "https://www.schneier.com/feed/atom/",
+      "category": "security"
+    },
+    {
+      "id": "bleepingcomputer",
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "category": "security"
+    },
+    {
+      "id": "thehackernews",
+      "name": "The Hacker News",
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "category": "security"
+    },
+    {
+      "id": "cisa",
+      "name": "CISA Cybersecurity Advisories",
+      "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "category": "security"
+    },
+    {
+      "id": "sans_isc",
+      "name": "SANS Internet Storm Center",
+      "url": "https://isc.sans.edu/rssfeed.xml",
+      "category": "security"
+    },
+    {
+      "id": "portswigger",
+      "name": "PortSwigger Research",
+      "url": "https://portswigger.net/research/rss",
+      "category": "security"
+    },
+    {
+      "id": "project_zero",
+      "name": "Google Project Zero",
+      "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "category": "security"
+    },
+    {
+      "id": "talos",
+      "name": "Cisco Talos Intelligence",
+      "url": "https://blog.talosintelligence.com/rss/",
+      "category": "security"
+    },
+    {
+      "id": "ms_security",
+      "name": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "category": "security"
+    },
+    {
+      "id": "lemmy_hacking",
+      "name": "Lemmy Hacking (lemmy.ml)",
+      "url": "https://lemmy.ml/feeds/c/hacking.xml?sort=Active",
+      "category": "security"
+    },
+    {
+      "id": "lemmy_privacy",
+      "name": "Lemmy Privacy (lemmy.ml)",
+      "url": "https://lemmy.ml/feeds/c/privacy.xml?sort=Active",
+      "category": "security"
+    },
+    {
+      "id": "science_news",
+      "name": "Science News",
+      "url": "https://www.sciencenews.org/feed",
+      "category": "science"
+    },
+    {
+      "id": "quanta",
+      "name": "Quanta Magazine",
+      "url": "https://www.quantamagazine.org/feed/",
+      "category": "science"
+    },
+    {
+      "id": "fapesp",
+      "name": "Revista Pesquisa FAPESP",
+      "url": "https://revistapesquisa.fapesp.br/feed/",
+      "category": "science"
+    },
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "url": "https://www.nasa.gov/feed/",
+      "category": "science"
+    },
+    {
+      "id": "ars_science",
+      "name": "Ars Technica Science",
+      "url": "https://feeds.arstechnica.com/arstechnica/science",
+      "category": "science"
+    },
+    {
+      "id": "sciencedaily",
+      "name": "ScienceDaily",
+      "url": "https://www.sciencedaily.com/rss/all.xml",
+      "category": "science"
+    },
+    {
+      "id": "phys_org",
+      "name": "Phys.org",
+      "url": "https://phys.org/rss-feed/",
+      "category": "science"
+    },
+    {
+      "id": "lwn",
+      "name": "LWN.net",
+      "url": "https://lwn.net/headlines/rss",
+      "category": "linux"
+    },
+    {
+      "id": "phoronix",
+      "name": "Phoronix",
+      "url": "https://www.phoronix.com/rss.php",
+      "category": "linux"
+    },
+    {
+      "id": "linuxiac",
+      "name": "Linuxiac",
+      "url": "https://linuxiac.com/feed/",
+      "category": "linux"
+    },
+    {
+      "id": "itsfoss",
+      "name": "It's FOSS",
+      "url": "https://itsfoss.com/rss/",
+      "category": "linux"
+    },
+    {
+      "id": "distrowatch",
+      "name": "DistroWatch",
+      "url": "https://distrowatch.com/news/dw.xml",
+      "category": "linux"
+    },
+    {
+      "id": "arch_news",
+      "name": "Arch Linux News",
+      "url": "https://archlinux.org/feeds/news/",
+      "category": "linux"
+    },
+    {
+      "id": "fedora_magazine",
+      "name": "Fedora Magazine",
+      "url": "https://fedoramagazine.org/feed/",
+      "category": "linux"
+    },
+    {
+      "id": "planet_kde",
+      "name": "Planet KDE",
+      "url": "https://planet.kde.org/rss20.xml",
+      "category": "linux"
+    },
+    {
+      "id": "gnome_weekly",
+      "name": "This Week in GNOME",
+      "url": "https://thisweek.gnome.org/index.xml",
+      "category": "linux"
+    },
+    {
+      "id": "freebsd_news",
+      "name": "FreeBSD News",
+      "url": "https://www.freebsd.org/news/feed.xml",
+      "category": "linux"
+    },
+    {
+      "id": "openbsd_journal",
+      "name": "OpenBSD Journal",
+      "url": "https://undeadly.org/cgi?action=rss",
+      "category": "linux"
+    },
+    {
+      "id": "diolinux",
+      "name": "Diolinux",
+      "url": "https://diolinux.com.br/feed",
+      "category": "linux"
+    },
+    {
+      "id": "lemmy_linux",
+      "name": "Lemmy Linux (lemmy.ml)",
+      "url": "https://lemmy.ml/feeds/c/linux.xml?sort=Active",
+      "category": "linux"
+    },
+    {
+      "id": "tchncs_linux",
+      "name": "Linux (discuss.tchncs.de)",
+      "url": "https://discuss.tchncs.de/feeds/c/linux.xml?sort=Active",
+      "category": "linux"
+    },
+    {
+      "id": "windows_blog",
+      "name": "Windows Blog",
+      "url": "https://blogs.windows.com/feed/",
+      "category": "windows"
+    },
+    {
+      "id": "windows_central",
+      "name": "Windows Central",
+      "url": "https://www.windowscentral.com/feeds.xml",
+      "category": "windows"
+    },
+    {
+      "id": "neowin",
+      "name": "Neowin",
+      "url": "https://www.neowin.net/news/rss/",
+      "category": "windows"
+    },
+    {
+      "id": "thurrott",
+      "name": "Thurrott",
+      "url": "https://www.thurrott.com/feed",
+      "category": "windows"
+    },
+    {
+      "id": "ghacks",
+      "name": "gHacks Technology News",
+      "url": "https://www.ghacks.net/feed/",
+      "category": "windows"
+    },
+    {
+      "id": "majorgeeks",
+      "name": "MajorGeeks",
+      "url": "https://www.majorgeeks.com/files/rss",
+      "category": "windows"
+    },
+    {
+      "id": "patchmypc",
+      "name": "Patch My PC Blog",
+      "url": "https://patchmypc.com/feed",
+      "category": "windows"
+    },
+    {
+      "id": "dispatch",
+      "name": "The Dispatch",
+      "url": "https://thedispatch.com/feed/",
+      "category": "news"
+    },
+    {
+      "id": "national_review",
+      "name": "National Review",
+      "url": "https://www.nationalreview.com/feed/",
+      "category": "news"
+    },
+    {
+      "id": "reason",
+      "name": "Reason",
+      "url": "https://reason.com/feed/",
+      "category": "news"
+    },
+    {
+      "id": "free_press",
+      "name": "The Free Press",
+      "url": "https://www.thefp.com/feed",
+      "category": "news"
+    },
+    {
+      "id": "fox_news",
+      "name": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+      "category": "news"
+    },
+    {
+      "id": "ny_post",
+      "name": "New York Post",
+      "url": "https://nypost.com/feed/",
+      "category": "news"
+    },
+    {
+      "id": "daily_wire",
+      "name": "The Daily Wire",
+      "url": "https://www.dailywire.com/feeds/rss.xml",
+      "category": "news"
+    },
+    {
+      "id": "jovem_pan",
+      "name": "Jovem Pan",
+      "url": "https://jovempan.com.br/feed",
+      "category": "news"
+    },
+    {
+      "id": "conexao_politica",
+      "name": "Conexão Política",
+      "url": "https://www.conexaopolitica.com.br/feed/",
+      "category": "news"
+    },
+    {
+      "id": "diario_do_poder",
+      "name": "Diário do Poder",
+      "url": "https://diariodopoder.com.br/feed",
+      "category": "news"
+    }
+  ]
+}
