@@ -1,15 +1,19 @@
 import asyncio
+import base64
 import logging
+import secrets
 from contextlib import asynccontextmanager
 
 import uvicorn
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse, Response
 from mcp.server.fastmcp import FastMCP
+from mcp.server.auth.settings import AuthSettings, ClientRegistrationOptions, RevocationOptions
 
 import config
 import db
+import oauth
 from feeds import load_feeds, categories, filter_category
 from formatting import format_items
 from models import LatestInput, SearchInput
@@ -21,10 +25,14 @@ logging.basicConfig(
 )
 log = logging.getLogger("news_mcp")
 
+_provider = oauth.NewsOAuthProvider() if config.ISSUER_URL else None
+
 
 @asynccontextmanager
 async def lifespan(_server: FastMCP):
     db.init_db()
+    if _provider:
+        oauth.init_oauth()
     task = asyncio.create_task(run_collector())
     log.info("news_mcp no ar; coletor rodando a cada %d min", config.POLL_INTERVAL_MIN)
     try:
@@ -33,7 +41,19 @@ async def lifespan(_server: FastMCP):
         task.cancel()
 
 
-mcp = FastMCP("news_mcp", lifespan=lifespan)
+if config.ISSUER_URL:
+    _auth_settings = AuthSettings(
+        issuer_url=config.ISSUER_URL,
+        resource_server_url=config.ISSUER_URL + "/mcp",
+        required_scopes=["news"],
+        client_registration_options=ClientRegistrationOptions(
+            enabled=True, valid_scopes=["news"], default_scopes=["news"]
+        ),
+        revocation_options=RevocationOptions(enabled=True),
+    )
+    mcp = FastMCP("news_mcp", lifespan=lifespan, auth_server_provider=_provider, auth=_auth_settings)
+else:
+    mcp = FastMCP("news_mcp", lifespan=lifespan)
 
 
 @mcp.tool(
@@ -138,11 +158,39 @@ class BearerAuthMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
+class AuthorizeGateMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app, password: str):
+        super().__init__(app)
+        self._password = password
+
+    async def dispatch(self, request: Request, call_next):
+        if request.url.path.rstrip("/").endswith("/authorize"):
+            if not self._check(request.headers.get("authorization", "")):
+                return Response(status_code=401,
+                                headers={"WWW-Authenticate": 'Basic realm="news-mcp"'})
+        return await call_next(request)
+
+    def _check(self, header: str) -> bool:
+        if not self._password or not header.startswith("Basic "):
+            return False
+        try:
+            _, _, pwd = base64.b64decode(header[6:]).decode().partition(":")
+        except Exception:
+            return False
+        return secrets.compare_digest(pwd, self._password)
+
+
 def main() -> None:
-    if not config.TOKEN:
-        log.warning("NEWS_MCP_TOKEN vazio: servidor SEM autenticação (ok só em dev local).")
     app = mcp.streamable_http_app()
-    app.add_middleware(BearerAuthMiddleware, token=config.TOKEN)
+    if config.ISSUER_URL:
+        if not config.AUTH_PASSWORD:
+            log.warning("NEWS_MCP_AUTH_PASSWORD vazio: /authorize ficará bloqueado até você definir uma senha.")
+        app.add_middleware(AuthorizeGateMiddleware, password=config.AUTH_PASSWORD)
+        log.info("OAuth habilitado (issuer %s)", config.ISSUER_URL)
+    else:
+        if not config.TOKEN:
+            log.warning("NEWS_MCP_TOKEN vazio: servidor SEM autenticação (ok só em dev local).")
+        app.add_middleware(BearerAuthMiddleware, token=config.TOKEN)
     uvicorn.run(app, host=config.HOST, port=config.PORT, log_level="info")
 
 

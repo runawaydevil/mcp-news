@@ -15,3 +15,6 @@ TOKEN = os.environ.get("NEWS_MCP_TOKEN", "")
 
 POLL_INTERVAL_MIN = int(os.environ.get("POLL_INTERVAL_MIN", "30"))
 RETENTION_DAYS = int(os.environ.get("RETENTION_DAYS", "90"))
+
+ISSUER_URL = os.environ.get("NEWS_MCP_ISSUER_URL", "").rstrip("/")
+AUTH_PASSWORD = os.environ.get("NEWS_MCP_AUTH_PASSWORD", "")

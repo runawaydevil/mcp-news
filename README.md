@@ -27,13 +27,15 @@ Rodar com Docker:
     mkdir -p data
     docker compose up -d --build
 
-A porta fica presa em 127.0.0.1:17631, atras de um proxy reverso (nginx) com HTTPS. O banco fica em ./data/news.db e persiste. Editar o feeds.json vale na proxima coleta, sem rebuild.
+A porta fica presa em 127.0.0.1:17631, atras de um proxy reverso (nginx) com HTTPS. O nginx deve repassar todas as rotas (proxy_pass para 127.0.0.1:17631), nao so /mcp, porque o OAuth usa /authorize, /token, /register e /.well-known. O banco fica em ./data/news.db e persiste. Editar o feeds.json vale na proxima coleta, sem rebuild.
 
-Configuracao pelo .env: NEWS_MCP_TOKEN, NEWS_MCP_PORT, POLL_INTERVAL_MIN, RETENTION_DAYS.
+Configuracao pelo .env: NEWS_MCP_TOKEN, NEWS_MCP_PORT, POLL_INTERVAL_MIN, RETENTION_DAYS, NEWS_MCP_ISSUER_URL, NEWS_MCP_AUTH_PASSWORD.
 
 Trocar as fontes: edite o feeds.json. Cada fonte tem id, name, url e category.
 
-Conectar no cliente MCP (transporte http com bearer token):
+Conectar no Claude Code / Desktop (transporte http com bearer token):
 
     news https://mcpnews.grupomurad.net/mcp
     header: Authorization: Bearer SEU_TOKEN
+
+Conectar no claude.ai (web/celular) via OAuth: defina NEWS_MCP_ISSUER_URL (ex: https://mcpnews.grupomurad.net) e NEWS_MCP_AUTH_PASSWORD no .env. No claude.ai, adicione um conector personalizado com a URL https://mcpnews.grupomurad.net/mcp; o navegador vai pedir a senha do /authorize para autorizar.
