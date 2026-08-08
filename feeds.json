@@ -337,48 +337,6 @@
       "category": "windows"
     },
     {
-      "id": "dispatch",
-      "name": "The Dispatch",
-      "url": "https://thedispatch.com/feed/",
-      "category": "news"
-    },
-    {
-      "id": "national_review",
-      "name": "National Review",
-      "url": "https://www.nationalreview.com/feed/",
-      "category": "news"
-    },
-    {
-      "id": "reason",
-      "name": "Reason",
-      "url": "https://reason.com/feed/",
-      "category": "news"
-    },
-    {
-      "id": "free_press",
-      "name": "The Free Press",
-      "url": "https://www.thefp.com/feed",
-      "category": "news"
-    },
-    {
-      "id": "fox_news",
-      "name": "Fox News",
-      "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
-      "category": "news"
-    },
-    {
-      "id": "ny_post",
-      "name": "New York Post",
-      "url": "https://nypost.com/feed/",
-      "category": "news"
-    },
-    {
-      "id": "daily_wire",
-      "name": "The Daily Wire",
-      "url": "https://www.dailywire.com/feeds/rss.xml",
-      "category": "news"
-    },
-    {
       "id": "jovem_pan",
       "name": "Jovem Pan",
       "url": "https://jovempan.com.br/feed",
