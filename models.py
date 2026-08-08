@@ -2,8 +2,8 @@ from typing import Optional
 from pydantic import BaseModel, Field, ConfigDict
 
 _CATEGORY_DESC = (
-    "Optional category to filter by: 'tech', 'programming', 'security', "
-    "'science', 'linux', 'windows' or 'news'. Omit for all categories."
+    "Optional category to filter by: 'tech', 'programação', 'segurança', "
+    "'ciência', 'linux', 'windows' or 'news'. Omit for all categories."
 )
 
 

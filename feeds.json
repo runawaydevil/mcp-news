@@ -40,175 +40,175 @@
       "id": "hackernews",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "lobsters",
       "name": "Lobsters",
       "url": "https://lobste.rs/rss",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "lemmy_programming",
       "name": "Lemmy Programming (programming.dev)",
       "url": "https://programming.dev/feeds/c/programming.xml?sort=Active",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "stackoverflow_blog",
       "name": "Stack Overflow Blog",
       "url": "https://stackoverflow.blog/feed/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "infoq",
       "name": "InfoQ",
       "url": "https://feed.infoq.com/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "martin_fowler",
       "name": "Martin Fowler",
       "url": "https://martinfowler.com/feed.atom",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "jetbrains",
       "name": "JetBrains Blog",
       "url": "https://blog.jetbrains.com/feed/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "freecodecamp",
       "name": "freeCodeCamp News",
       "url": "https://www.freecodecamp.org/news/rss/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "css_tricks",
       "name": "CSS-Tricks",
       "url": "https://css-tricks.com/feed/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "smashing",
       "name": "Smashing Magazine",
       "url": "https://www.smashingmagazine.com/feed/",
-      "category": "programming"
+      "category": "programação"
     },
     {
       "id": "krebs",
       "name": "KrebsOnSecurity",
       "url": "https://krebsonsecurity.com/feed/",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "schneier",
       "name": "Schneier on Security",
       "url": "https://www.schneier.com/feed/atom/",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "bleepingcomputer",
       "name": "BleepingComputer",
       "url": "https://www.bleepingcomputer.com/feed/",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "thehackernews",
       "name": "The Hacker News",
       "url": "https://feeds.feedburner.com/TheHackersNews",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "cisa",
       "name": "CISA Cybersecurity Advisories",
       "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "sans_isc",
       "name": "SANS Internet Storm Center",
       "url": "https://isc.sans.edu/rssfeed.xml",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "portswigger",
       "name": "PortSwigger Research",
       "url": "https://portswigger.net/research/rss",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "project_zero",
       "name": "Google Project Zero",
       "url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "talos",
       "name": "Cisco Talos Intelligence",
       "url": "https://blog.talosintelligence.com/rss/",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "ms_security",
       "name": "Microsoft Security Blog",
       "url": "https://www.microsoft.com/en-us/security/blog/feed/",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "lemmy_hacking",
       "name": "Lemmy Hacking (lemmy.ml)",
       "url": "https://lemmy.ml/feeds/c/hacking.xml?sort=Active",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "lemmy_privacy",
       "name": "Lemmy Privacy (lemmy.ml)",
       "url": "https://lemmy.ml/feeds/c/privacy.xml?sort=Active",
-      "category": "security"
+      "category": "segurança"
     },
     {
       "id": "science_news",
       "name": "Science News",
       "url": "https://www.sciencenews.org/feed",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "quanta",
       "name": "Quanta Magazine",
       "url": "https://www.quantamagazine.org/feed/",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "fapesp",
       "name": "Revista Pesquisa FAPESP",
       "url": "https://revistapesquisa.fapesp.br/feed/",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "nasa",
       "name": "NASA",
       "url": "https://www.nasa.gov/feed/",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "ars_science",
       "name": "Ars Technica Science",
       "url": "https://feeds.arstechnica.com/arstechnica/science",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "sciencedaily",
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "phys_org",
       "name": "Phys.org",
       "url": "https://phys.org/rss-feed/",
-      "category": "science"
+      "category": "ciência"
     },
     {
       "id": "lwn",

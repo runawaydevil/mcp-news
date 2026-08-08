@@ -9,7 +9,7 @@ Ferramentas:
 - search_news: busca por palavra-chave
 - get_stats: total de artigos e hora da ultima coleta
 
-Categorias das fontes: tech, programming, security, science, linux, windows, news.
+Categorias das fontes: tech, programação, segurança, ciência, linux, windows, news.
 
 Rodar local:
 
