@@ -28,19 +28,6 @@ log = logging.getLogger("news_mcp")
 _provider = oauth.NewsOAuthProvider() if config.ISSUER_URL else None
 
 
-@asynccontextmanager
-async def lifespan(_server: FastMCP):
-    db.init_db()
-    if _provider:
-        oauth.init_oauth()
-    task = asyncio.create_task(run_collector())
-    log.info("news_mcp no ar; coletor rodando a cada %d min", config.POLL_INTERVAL_MIN)
-    try:
-        yield
-    finally:
-        task.cancel()
-
-
 if config.ISSUER_URL:
     _auth_settings = AuthSettings(
         issuer_url=config.ISSUER_URL,
@@ -51,9 +38,9 @@ if config.ISSUER_URL:
         ),
         revocation_options=RevocationOptions(enabled=True),
     )
-    mcp = FastMCP("news_mcp", lifespan=lifespan, auth_server_provider=_provider, auth=_auth_settings)
+    mcp = FastMCP("news_mcp", auth_server_provider=_provider, auth=_auth_settings)
 else:
-    mcp = FastMCP("news_mcp", lifespan=lifespan)
+    mcp = FastMCP("news_mcp")
 
 
 @mcp.tool(
@@ -180,8 +167,28 @@ class AuthorizeGateMiddleware(BaseHTTPMiddleware):
         return secrets.compare_digest(pwd, self._password)
 
 
+def _wrap_lifespan(app) -> None:
+    session_lifespan = app.router.lifespan_context
+
+    @asynccontextmanager
+    async def lifespan(_app):
+        db.init_db()
+        if _provider:
+            oauth.init_oauth()
+        task = asyncio.create_task(run_collector())
+        log.info("news_mcp no ar; coletor rodando a cada %d min", config.POLL_INTERVAL_MIN)
+        try:
+            async with session_lifespan(_app):
+                yield
+        finally:
+            task.cancel()
+
+    app.router.lifespan_context = lifespan
+
+
 def main() -> None:
     app = mcp.streamable_http_app()
+    _wrap_lifespan(app)
     if config.ISSUER_URL:
         if not config.AUTH_PASSWORD:
             log.warning("NEWS_MCP_AUTH_PASSWORD vazio: /authorize ficará bloqueado até você definir uma senha.")
