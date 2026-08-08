@@ -10,6 +10,7 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse, Response
 from mcp.server.fastmcp import FastMCP
 from mcp.server.auth.settings import AuthSettings, ClientRegistrationOptions, RevocationOptions
+from mcp.server.transport_security import TransportSecuritySettings
 
 import config
 import db
@@ -27,6 +28,11 @@ log = logging.getLogger("news_mcp")
 
 _provider = oauth.NewsOAuthProvider() if config.ISSUER_URL else None
 
+# O servidor fica atrás do nginx e exige token/OAuth, então a proteção
+# anti-DNS-rebinding do SDK (que valida o Host) só atrapalha: sem isto o
+# Host público seria recusado com 421 Misdirected Request.
+_security = TransportSecuritySettings(enable_dns_rebinding_protection=False)
+
 
 if config.ISSUER_URL:
     _auth_settings = AuthSettings(
@@ -38,9 +44,10 @@ if config.ISSUER_URL:
         ),
         revocation_options=RevocationOptions(enabled=True),
     )
-    mcp = FastMCP("news_mcp", auth_server_provider=_provider, auth=_auth_settings)
+    mcp = FastMCP("news_mcp", auth_server_provider=_provider, auth=_auth_settings,
+                  transport_security=_security)
 else:
-    mcp = FastMCP("news_mcp")
+    mcp = FastMCP("news_mcp", transport_security=_security)
 
 
 @mcp.tool(
